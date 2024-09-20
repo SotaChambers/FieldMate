@@ -1,0 +1,16 @@
+FROM python:3.10
+WORKDIR /workspace
+RUN apt-get update && apt-get install -y \
+    libgdal-dev libgl1-mesa-glx default-mysql-client \
+    && rm -rf /var/lib/apt/lists/*
+COPY . .
+
+# ENVファイルを環境用に変更
+RUN mv /workspace/.env.docker /workspace/.env
+
+RUN pip install poetry==1.4.0
+RUN poetry config virtualenvs.in-project true
+RUN poetry install --without dev
+
+ENV PATH=/workspace/.venv/bin:$PATH
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

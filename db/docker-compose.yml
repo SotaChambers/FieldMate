@@ -1,0 +1,19 @@
+version: "3.3"
+name: sports_activate
+services:
+    mysql:
+        image: mysql:8.0
+        container_name: mysql
+        ports:
+            - "3304:3306"
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: demo
+            TZ: Asia/Tokyo
+        volumes:
+            - ./mysql-data:/var/lib/mysql
+            - ./my.conf:/etc/mysql/conf.d/my.conf
+
+volumes:
+    mysql-data:

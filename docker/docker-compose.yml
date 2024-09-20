@@ -1,0 +1,25 @@
+version: "3.3"
+name: sports_activate
+services:
+    web:
+        build:
+            context: ../frontend
+            dockerfile: ./Dockerfile.prd
+        image: web
+        container_name: web
+        ports:
+            - "3000:3000"
+        tty: true
+    ap:
+        build:
+            context: ../backend
+            dockerfile: ./Dockerfile.prd
+        image: ap
+        container_name: ap
+        ports:
+            - "8000:8000"
+        tty: true
+    mysql:
+        volumes:
+            - ../db/mysql-data:/var/lib/mysql
+            - ../db/my.conf:/etc/mysql/conf.d/my.conf

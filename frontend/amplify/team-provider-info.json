@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-filemate-dev-9769d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::345013126761:role/amplify-filemate-dev-9769d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::345013126761:role/amplify-filemate-dev-9769d-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-filemate-dev-9769d-deployment",
+      "UnauthRoleName": "amplify-filemate-dev-9769d-unauthRole",
+      "StackName": "amplify-filemate-dev-9769d",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:345013126761:stack/amplify-filemate-dev-9769d/c4ee0530-77f9-11ef-9eb2-06119606e855",
+      "AmplifyAppId": "dxhpw7n12qhcr"
+    },
+    "categories": {
+      "auth": {
+        "filemate0e97823c": {}
+      }
+    }
+  }
+}

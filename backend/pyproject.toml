@@ -19,6 +19,7 @@ pydantic-settings = "^2.5.2"
 pymysql = "^1.1.1"
 cryptography = "^43.0.1"
 pandas = "^2.2.2"
+boto3 = "^1.35.24"
 
 
 [build-system]

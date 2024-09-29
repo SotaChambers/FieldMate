@@ -1,17 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Home from "./Home";
+import Header from "./components/Header";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // React Routerをインポート
+import Recruit from "./Recruit";
+import Games from "./Games";
+import GameDetail from "./GameDetail";
+import { Authenticator } from "@aws-amplify/ui-react"; // Authenticatorをインポート
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <React.StrictMode>
+        <Router>
+            <Header />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/recruit" element={<Recruit />} />
+                <Route path="/games" element={<Games />} />
+                <Route path="/game_detail/:id" element={<GameDetail />} />
+                <Route path="/login" element={<Authenticator />} />{" "}
+                {/* ログインページ */}
+            </Routes>
+        </Router>
+    </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

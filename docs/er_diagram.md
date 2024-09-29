@@ -28,6 +28,7 @@ erDiagram
         time game_time
         string prefecture
         string place
+        string *price
         string level
         string comment
         int opponent_id FK

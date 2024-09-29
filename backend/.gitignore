@@ -197,3 +197,4 @@ experiments/evaluation/lithium_detection_test_data/*
 
 experiments/create_product_set/logs
 experiments/create_product_set/lithium_detection_database_data/*
+.env
